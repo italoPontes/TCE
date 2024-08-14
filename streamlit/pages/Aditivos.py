@@ -63,9 +63,20 @@ st.bar_chart(df_top_r, x="Unidade_Gestora",
                      y="Valor",
                      color="Tipo Pagamento", stack=False)
 
+def filter(text: str = '', values_list: list = []):
+    for item in values_list:
+        if text.lower() in item.lower():
+            return True
+    return False 
 
 
-st.title('Top Discrepância: Busca por Ente')
+text = st.text_input("Digite o campo que você deseja pesquisar:")
+columns = ['unidade_gestora', 'ente', 'numero_licitacao']
+df_filtered = df[df.apply(lambda x: filter(text, x[columns]), axis=1)]
+st.dataframe(df_filtered)
+
+
+st.title('Top Discrepância: Busca por Entes')
 text = st.text_input("Digite os Ente a serem analisados:.")
 text = [word.lower() for word in text.split(',')]   
 feat = 'ente'

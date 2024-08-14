@@ -8,7 +8,7 @@ input_file_name = 'data/Folha_2024.csv'
 df = pd.read_csv(input_file_name, sep=';')
 
 # Establece el título de la aplicación web
-st.title("TCE PB - Folha de Pagame 3nto")
+st.title("TCE PB - Folha de Pagamento")
 
 top_k = 10
 
