@@ -6,7 +6,7 @@ import streamlit as st
 
 st.set_page_config(layout="wide")
 
-st.page_link("home.py", label="Página inicial", icon="🏠")
+st.page_link("Home.py", label="Página inicial", icon="🏠")
 
 st.page_link("pages/Aditivos.py", label="Aditivos")
 
